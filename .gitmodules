@@ -4,3 +4,6 @@
 [submodule "Spotbook.Vue"]
 	path = Spotbook.Vue
 	url = https://github.com/goatm0n/Spotbook.Vue.git
+[submodule "Spotbook.React"]
+	path = Spotbook.React
+	url = https://github.com/goatm0n/Spotbook.React.git
