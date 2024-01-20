@@ -1,0 +1,6 @@
+[submodule "spotbook"]
+	path = spotbook
+	url = https://github.com/goatm0n/spotbook.git
+[submodule "Spotbook.Vue"]
+	path = Spotbook.Vue
+	url = https://github.com/goatm0n/Spotbook.Vue.git
