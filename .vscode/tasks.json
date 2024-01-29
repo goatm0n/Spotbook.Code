@@ -1,0 +1,46 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Vue",
+			"type": "npm",
+			"script": "dev",
+			"path": "Spotbook.Vue",
+			"problemMatcher": [],
+			"detail": "vite --host localhost --port 5173",	
+			"group": "build",
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		},
+		{
+			"label": "React",
+			"type": "npm",
+			"script": "start",
+			"path": "Spotbook.React",
+			"problemMatcher": [],
+			"detail": "react-scripts start",	
+			"group": "build",
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		},
+		{
+			"label": "Django",
+			"type": "shell", 
+			"command": "./scripts/djangoserver.ps1",		
+			"group": "build",
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		},
+		{
+			"label": "Spotbook",
+			"dependsOn": ["Django", "Vue", "React"],
+			"group": "build",
+		}
+	]
+}
