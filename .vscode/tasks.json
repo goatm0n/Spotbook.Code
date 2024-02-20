@@ -38,6 +38,16 @@
 			}
 		},
 		{
+			"label": "Django-Dev",
+			"type": "shell", 
+			"command": "./scripts/djangodevserver.ps1",		
+			"group": "build",
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		},
+		{
 			"label": "Spotbook",
 			"dependsOn": ["Django", "Vue", "React"],
 			"group": "build",
