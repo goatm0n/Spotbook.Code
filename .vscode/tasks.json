@@ -2,16 +2,55 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "Vue",
+			"label": "AdminVue",
 			"type": "npm",
-			"script": "dev",
+			"script": "admin",
 			"path": "Spotbook.Vue",
 			"problemMatcher": [],
-			"detail": "vite --host localhost --port 5173",	
+			"detail": "vite serve ./src/_admin --config admin.vite.config.ts --host localhost --port 5174",
 			"group": "build",
 			"presentation": {
 				"reveal": "always",
-				"panel": "new"
+				"panel": "new",
+			}
+		},
+		{
+			"label": "AdminVueDev",
+			"type": "npm",
+			"script": "admin:dev",
+			"path": "Spotbook.Vue",
+			"problemMatcher": [],
+			"detail": "vite serve ./src/_admin --config admin.vite.config.ts --host localhost --port 5174 --mode development",
+			"group": "build",
+			"presentation": {
+				"reveal": "always",
+				"panel": "new",
+			}
+		},
+		{
+			"label": "PublicVue",
+			"type": "npm",
+			"script": "public",
+			"path": "Spotbook.Vue",
+			"problemMatcher": [],
+			"detail": "vite serve ./src/_public --config public.vite.config.ts --host localhost --port 5175",
+			"group": "build",
+			"presentation": {
+				"reveal": "always",
+				"panel": "new",
+			}
+		},
+		{
+			"label": "PublicVueDev",
+			"type": "npm",
+			"script": "public:dev",
+			"path": "Spotbook.Vue",
+			"problemMatcher": [],
+			"detail": "vite serve ./src/_public --config public.vite.config.ts --host localhost --port 5175 --mode development",
+			"group": "build",
+			"presentation": {
+				"reveal": "always",
+				"panel": "new",
 			}
 		},
 		{
@@ -48,9 +87,49 @@
 			}
 		},
 		{
-			"label": "Spotbook",
-			"dependsOn": ["Django", "Vue", "React"],
+			"label": "Vue",
+			"dependsOn": ["AdminVue", "PublicVue"],
 			"group": "build",
-		}
+		},
+		{
+			"label": "VueDev",
+			"dependsOn": ["AdminVueDev", "PublicVueDev"],
+			"group": "build",
+		},
+		{
+			"label": "Spotbook-Dev",
+			"dependsOn": ["Django-Dev", "VueDev"],
+			"group": "build",
+		},
+		{
+			"label": "Spotbook-Dev-Vue-Prod",
+			"dependsOn": ["Django-Dev", "Vue"],
+			"group": "build",
+		},
+		{
+			"label": "Spotbook-Admin-Dev",
+			"dependsOn": ["Django-Dev", "AdminVueDev"],
+			"group": "build",
+		},
+		{
+			"label": "Spotbook-Public-Dev",
+			"dependsOn": ["Django-Dev", "PublicVueDev"],
+			"group": "build",
+		},
+		{
+			"label": "Spotbook-Prod",
+			"dependsOn": ["Django", "Vue"],
+			"group": "build",
+		},
+		{
+			"label": "Spotbook-Admin-Prod",
+			"dependsOn": ["Django", "AdminVue"],
+			"group": "build",
+		},
+		{
+			"label": "Spotbook-Public-Prod",
+			"dependsOn": ["Django", "PublicVue"],
+			"group": "build",
+		},
 	]
 }
